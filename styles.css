@@ -10,15 +10,45 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+    animation: shine 2s infinite;
 }
 
 header input {
     padding: 10px;
     margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+header input:focus {
+    transform: scale(1.05);
 }
 
 header button {
     padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #777;
 }
 
 main {
@@ -36,18 +66,64 @@ main {
     width: 200px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .movie img {
     max-width: 100%;
     height: auto;
+    transition: transform 0.3s;
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.movie:hover img {
+    transform: scale(1.1);
+}
+
+.movie::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+    transition: all 0.3s;
+    transform: translateX(-100%);
+}
+
+.movie:hover::before {
+    transform: translateX(100%);
 }
 
 .movie h2 {
     font-size: 18px;
     margin: 10px 0;
+    transition: color 0.3s;
+}
+
+.movie:hover h2 {
+    color: #333;
 }
 
 .movie p {
     margin: 5px 0;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
