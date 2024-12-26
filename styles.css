@@ -1,8 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 header {
@@ -12,6 +13,42 @@ header {
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+header input:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+
+header button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+header button:hover {
+    background-color: #777;
+    transform: scale(1.05);
 }
 
 header::before {
@@ -25,32 +62,6 @@ header::before {
     animation: shine 2s infinite;
 }
 
-header input {
-    padding: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    transition: transform 0.2s ease-in-out;
-}
-
-header input:focus {
-    transform: scale(1.05);
-}
-
-header button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #555;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-header button:hover {
-    background-color: #777;
-}
-
 main {
     display: flex;
     flex-wrap: wrap;
@@ -62,24 +73,26 @@ main {
     background-color: #fff;
     border: 1px solid #ddd;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     width: 200px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .movie img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
     transition: transform 0.3s;
 }
 
 .movie:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .movie:hover img {
@@ -106,6 +119,7 @@ main {
     font-size: 18px;
     margin: 10px 0;
     transition: color 0.3s;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .movie:hover h2 {
@@ -114,6 +128,7 @@ main {
 
 .movie p {
     margin: 5px 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 @keyframes shine {
@@ -125,5 +140,14 @@ main {
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
