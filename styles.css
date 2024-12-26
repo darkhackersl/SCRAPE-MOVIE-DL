@@ -7,13 +7,23 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(90deg, #333, #555);
     color: #fff;
     padding: 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: headerBg 5s infinite alternate;
+}
+
+@keyframes headerBg {
+    0% {
+        background: linear-gradient(90deg, #333, #555);
+    }
+    100% {
+        background: linear-gradient(90deg, #555, #333);
+    }
 }
 
 header h1 {
@@ -40,14 +50,14 @@ header button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #555;
+    background-color: #777;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 header button:hover {
-    background-color: #777;
+    background-color: #999;
     transform: scale(1.05);
 }
 
@@ -70,8 +80,8 @@ main {
 }
 
 .movie {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    border: none;
     margin: 10px;
     padding: 20px;
     width: 200px;
@@ -81,6 +91,18 @@ main {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .movie img {
