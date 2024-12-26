@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Downloader | Thenux</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Thenux Movie DL</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🎬 Movie Downloader | Thenux 🎬</h1>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search for a movie...">
-            <button id="search-btn">Search</button>
-        </div>
-        <div id="results"></div>
-        <div id="movie-details"></div>
-    </div>
+    <header>
+        <h1>Thenux Movie Download</h1>
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <button onclick="searchMovies()">Search</button>
+    </header>
+    <main id="movieContainer">
+        <!-- Movie content will be injected here by JavaScript -->
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
