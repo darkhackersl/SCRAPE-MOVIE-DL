@@ -1,3 +1,5 @@
+/* Existing styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -73,13 +75,14 @@ header::before {
 }
 
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 20px;
 }
 
-.movie {
+section {
+    margin-bottom: 20px;
+}
+
+.movie, .tvShow {
     background: linear-gradient(120deg, #f6d365, #fda085);
     border: none;
     margin: 10px;
@@ -105,23 +108,23 @@ main {
     }
 }
 
-.movie img {
+.movie img, .tvShow img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     transition: transform 0.3s;
 }
 
-.movie:hover {
+.movie:hover, .tvShow:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.movie:hover img {
+.movie:hover img, .tvShow:hover img {
     transform: scale(1.1);
 }
 
-.movie::before {
+.movie::before, .tvShow::before {
     content: '';
     position: absolute;
     top: 0;
@@ -133,22 +136,22 @@ main {
     transform: translateX(-100%);
 }
 
-.movie:hover::before {
+.movie:hover::before, .tvShow:hover::before {
     transform: translateX(100%);
 }
 
-.movie h2 {
+.movie h2, .tvShow h2 {
     font-size: 18px;
     margin: 10px 0;
     transition: color 0.3s;
     animation: fadeIn 1.5s ease-in-out;
 }
 
-.movie:hover h2 {
+.movie:hover h2, .tvShow:hover h2 {
     color: #333;
 }
 
-.movie p {
+.movie p, .tvShow p {
     margin: 5px 0;
     animation: fadeIn 2s ease-in-out;
 }
@@ -172,4 +175,36 @@ main {
     to {
         opacity: 1;
     }
+}
+
+#tvShowContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tvShow {
+    width: 80%;
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.tvShow img {
+    width: 150px;
+    float: left;
+    margin-right: 20px;
+}
+
+.tvShow h2, .tvShow p {
+    clear: both;
+}
+
+.episode {
+    background: #f8f8f8;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
 }
