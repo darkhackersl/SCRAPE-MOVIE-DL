@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayDefaultMovies();
 });
 
-async function displayDefaultMovies() {
+/*async function displayDefaultMovies() {
     const response = await fetch(`https://www.dark-yasiya-api.site/movie/sinhalasub/search?text=popular`);
     const data = await response.json();
     
@@ -28,9 +28,9 @@ async function displayDefaultMovies() {
     } else {
         defaultMoviesContainer.innerHTML = '<p>No movies found</p>';
     }
-}
+}*/
 
-/*async function searchMovies() {
+async function searchMovies() {
     const searchInput = document.getElementById('searchInput').value;
     const response = await fetch(`https://www.dark-yasiya-api.site/movie/sinhalasub/search?text=${encodeURIComponent(searchInput)}`);
     const data = await response.json();
@@ -56,7 +56,7 @@ async function displayDefaultMovies() {
         });
     } else {
         movieContainer.innerHTML = '<p>No movies found</p>';
-    }*/
+    }
 
     // Add active class to body and header for animation and color change
     document.body.classList.add('active');
