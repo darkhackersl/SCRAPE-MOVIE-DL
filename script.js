@@ -57,6 +57,10 @@ async function searchMovies() {
     } else {
         movieContainer.innerHTML = '<p>No movies found</p>';
     }
+
+    // Add active class to body and header for animation and color change
+    document.body.classList.add('active');
+    document.querySelector('header').classList.add('active');
 }
 
 async function loadTvShowDetails() {
